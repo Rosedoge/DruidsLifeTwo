@@ -22,7 +22,8 @@ public class PlayerScript : MonoBehaviour {
     public static PlayerScript instance = null;
 
     Rigidbody2D myRigid;
-
+    [SerializeField]
+    BoxCollider2D myCol;
     #endregion
 
     #region vitals
@@ -30,6 +31,7 @@ public class PlayerScript : MonoBehaviour {
     public bool InControl = true;
 
     #endregion
+    RaycastHit2D myHit;
 
     private void Awake()
     {
@@ -100,6 +102,15 @@ public class PlayerScript : MonoBehaviour {
             {
                 MyFoward = 1;
             }
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            myCol.isTrigger = true;
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            myCol.isTrigger = false;
+      
         }
         if (Input.GetKeyDown(KeyCode.E))
         {

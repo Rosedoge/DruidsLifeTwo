@@ -8,6 +8,7 @@ TagManager:
   - Fireball
   - Killzone
   - Lavafall
+  - SubGame
   layers:
   - Default
   - TransparentFX

@@ -22,11 +22,14 @@ public class TorchControllerScript : MonoBehaviour {
 	void Update () {
         if (!AllTorchesLit)
         {
-            foreach(TorchScript torch in torches)
+            foreach (TorchScript torch in torches)
             {
-                if (torch.IsLit)
+                if (torch != null)
                 {
-                    torches.Remove(torch);
+                    if (torch.IsLit)
+                    {
+                        torches.Remove(torch);
+                    }
                 }
             }
             if(torches.Count == 0)
